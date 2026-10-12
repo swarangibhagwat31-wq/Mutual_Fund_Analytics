@@ -1,0 +1,31 @@
+              dataset  rows  columns  total_missing_values  duplicate_rows  is_empty
+investor_transactions 32778       13                     0               0     False
+   portfolio_holdings   322        8                     0               0     False
+    benchmark_indices  8050        3                     0               0     False
+          fund_master    40       15                     0               0     False
+          nav_history 46000        3                     0               0     False
+    aum_by_fund_house    90        5                     0               0     False
+  monthly_sip_inflows    48        6                    12               0     False
+     category_inflows   144        3                     0               0     False
+ industry_folio_count    21        6                     0               0     False
+   scheme_performance    40       19                     0               0     False
+
+
+1. Fund Master: 40 schemes across 10 fund houses. No missing values or duplicate rows found.
+
+2. NAV History: 46,000 records with no missing values or duplicate rows.
+
+3. Scheme-Code Validation: All 40 scheme codes matched between Fund Master and NAV History.
+
+4. Monthly SIP Inflows: 12 missing values identified in the yoy_growth_pct column. Further investigation is required.
+
+5. Live NAV Data: NAV data fetched for six mutual fund schemes using MFAPI.
+
+6. ICICI NAV: One zero or negative NAV value detected. Verification is pending.
+
+7. Kotak Scheme Mapping: Scheme code 120841 returned Quant Mid Cap Fund – Direct Plan – Growth Option instead of the fund suggested by the filename Kotak_Bluechip_nav.csv. Verification is pending.
+
+Conclusion:
+Initial data ingestion and data-quality checks were completed. The identified issues require further investigation before the affected data is used for analysis.
+
+Status: In Progress
